@@ -3,7 +3,7 @@ import pandas as pd
 import json
 import geopandas as gpd
 
-@st.cache_data(show_spinner=False)
+#@st.cache_data(show_spinner=False)
 def main(labels, data, datageometry, datalocalidad):
 
     #-------------------------------------------------------------------------#
@@ -139,7 +139,7 @@ def main(labels, data, datageometry, datalocalidad):
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-12 p-2">
-                        <div id="box_shadow_default" class="h-100 d-flex flex-column" style="min-height: 300px;">
+                        <div id="box_shadow_default" class="h-100 d-flex flex-column" style="max-height: 400px;">
                             <canvas id="marcaChart"></canvas>
                         </div>
                     </div>
