@@ -3,7 +3,7 @@ import pandas as pd
 import json
 import geopandas as gpd
 
-#@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False)
 def main(labels, data, datageometry, datalocalidad):
 
     #-------------------------------------------------------------------------#
@@ -262,7 +262,7 @@ def get_valor_vehiculo(df):
                     data: {values_json},
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderWidth: 1,
-                    backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0"],
+                    backgroundColor: ["#10564F", "#2F746A", "#E87E42", "#E8BD42"],
                 }}]
             }};
             new Chart(ctx, {{
@@ -337,11 +337,11 @@ def get_numero_vehiculos(df):
             const data = {{
                 labels: {labels_json},
                 datasets: [{{
-                    label: 'Númeo de vehículos',
+                    label: 'Número de vehículos',
                     data: {values_json},
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderWidth: 1,
-                    backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0", "#9966ff"],
+                    backgroundColor: ["#10564F", "#2F746A", "#E87E42", "#E8A142", "#E8BD42"],
                 }}]
             }};
             new Chart(ctx, {{
@@ -407,7 +407,7 @@ def get_tipo_vehiculos(df):
                     data: {values_json},
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderWidth: 1,
-                    backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0", "#9966ff"],
+                    backgroundColor: ["#10564F", "#2F746A", "#E87E42", "#E8A142", "#E8BD42"],
                 }}]
             }};
             new Chart(ctx, {{
@@ -478,7 +478,7 @@ def get_valor_propiedades(df):
                     data: {values_json},
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderWidth: 1,
-                    backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0", "#9966ff"],
+                    backgroundColor: ["#10564F", "#2F746A", "#E87E42", "#E8A142", "#E8BD42"],
                 }}]
             }};
             new Chart(ctx, {{
@@ -542,7 +542,7 @@ def get_estrato(df):
                 datasets: [{{
                     label: 'Estrato',
                     data: {values_json},
-                    backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0", "#9966ff", "#c9cbcf"],
+                    backgroundColor: ['#10564F', '#1F6D5E', '#2F746A', '#E87E42', '#E8A142', '#E8BD42'],
                     borderWidth: 1
                 }}]
             }};
@@ -611,7 +611,7 @@ def get_numero_propiedades(df):
                     data: {values_json},
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderWidth: 1,
-                    backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0", "#9966ff"],
+                    backgroundColor: ["#10564F", "#2F746A", "#E87E42", "#E8A142", "#E8BD42"],
                 }}]
             }};
             new Chart(ctx, {{
@@ -679,7 +679,7 @@ def get_edades(df):
                     data: {values_json},
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderWidth: 1,
-                    backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0", "#ff9f40", "#c9cbcf"],
+                    backgroundColor: ['#10564F', '#1F6D5E', '#2F746A', '#E87E42', '#E88E42', '#E8A142', '#E8BD42'],
                 }}]
             }};
             new Chart(ctx, {{
