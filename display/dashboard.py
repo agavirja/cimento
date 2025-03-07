@@ -32,7 +32,6 @@ def main(labels, data, datageometry, datalocalidad):
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>DashboarD_vehiculos</title>
         <link rel="stylesheet" href="https://iconsapp.nyc3.digitaloceanspaces.com/_estilo_dashboard_vehiculos/bootstrap.min.css">
         <link rel="stylesheet" href="https://iconsapp.nyc3.digitaloceanspaces.com/_estilo_dashboard_vehiculos/styles.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -41,7 +40,7 @@ def main(labels, data, datageometry, datalocalidad):
     
     <body>
         <section>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 col-lg-3 p-2">
                         <div id="box_shadow_default" class="h-100 d-flex flex-column" style="min-height: 100px;">
@@ -71,7 +70,7 @@ def main(labels, data, datageometry, datalocalidad):
             </div>
         </section>
         <section>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 col-lg-7 p-2">
                         <div id="box_shadow_default" class="h-100 d-flex flex-column" style="min-height: 500px;">
@@ -87,7 +86,7 @@ def main(labels, data, datageometry, datalocalidad):
             </div>
         </section>
         <section>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     
                     <div class="col-12 col-lg-3 p-2">
@@ -115,7 +114,7 @@ def main(labels, data, datageometry, datalocalidad):
             </div>
         </section>
         <section>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 col-lg-4 p-2">
                         <div id="box_shadow_default" class="h-100 d-flex flex-column" style="min-height: 400px;">
@@ -136,7 +135,7 @@ def main(labels, data, datageometry, datalocalidad):
             </div>
         </section>
         <section>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 col-lg-12 p-2">
                         <div id="box_shadow_default" class="h-100 d-flex flex-column" style="max-height: 400px;">
