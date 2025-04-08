@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 from display.dashboard import main as generar_html
 
@@ -27,11 +28,26 @@ with st.spinner('Cargando...'):
     
     labels,data,databarrios,datalocalidad = getdata()
     
+    #-------------------------------------------------------------------------#
+    # Aleatorio para dias de la semana
+    dias           = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
+    probabilidades = [0.05, 0.05, 0.05, 0.05, 0.15, 0.25, 0.4]
+    np.random.seed(42)
+    data['dia_semana'] = np.random.choice(dias, size=len(data), p=probabilidades)
+    data['dia_semana'] = pd.Categorical(data['dia_semana'], categories=dias, ordered=True)
+
+
+    franjas = ["Mañana", "Tarde", "Noche"]
+    probabilidades_franja = [0.5, 0.3, 0.2]
+    np.random.seed(42)  
+    data['franja_horaria'] = np.random.choice(franjas, size=len(data), p=probabilidades_franja)
+    data['franja_horaria'] = pd.Categorical(data['franja_horaria'], categories=franjas, ordered=True)
+
     col1, col2 = st.columns([8, 4]) 
     with col2:
         st.image('https://iconsapp.nyc3.digitaloceanspaces.com/_clientes_logos/canva-logo-CimentoFontanar.png', width=400)
     
-    col1,col2,col3 = st.columns([4,4,4])
+    col1,col2,col3 = st.columns([4,4,4],vertical_alignment='center')
     with col3:
         if st.button('Descargar Excel'):
             variables  = ['placa', 'tipoID', 'nombre', 'numID', 'calidad', 'procProp', 'fechaDesde', 'fechaHasta', 'anio', 'avaluo', 'capacidadCarga', 'carroceria', 'clase', 'linea', 'marca', 'modelo', 'porcentajeRespon', 'responsable', 'tipoServicio', 'impuesto_a_cargo', 'cilindraje', 'url', 'direccion_notificacion', 'telefonos', 'email', 'propietario', 'edad', 'numprop', 'avaluocatastral', 'estrato']
@@ -44,12 +60,15 @@ with st.spinner('Cargando...'):
         if 'Barrio catastral' in tipo:
             datageometry = databarrios.copy()
 
+    with col2:
+        options = ["Todos","Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
+        diasem  = st.selectbox('Día de la semana',options=options)
+        if "Todos" not in diasem:
+            data = data[data['dia_semana']==diasem]
+        
     if 'geometry' in datageometry: 
         del datageometry['geometry']
         datageometry = pd.DataFrame(datageometry)
         
     htmlrender = generar_html(labels, data, datageometry, datalocalidad)
     st.components.v1.html(htmlrender, height=2400, scrolling=True)
-
-
-
